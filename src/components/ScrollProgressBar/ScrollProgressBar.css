@@ -1,0 +1,20 @@
+.progress-main-wrapper {
+  border-radius: 100px;
+  background: var(--ink-terface-6, #ededf5);
+  height: 4px;
+  position: fixed;
+  top: 12px;
+  left: 24px;
+  right: 24px;
+  z-index: 1;
+  width: calc(100% - 48px);
+  box-sizing: border-box;
+  z-index: 2000;
+}
+
+.progress-main-style {
+  height: 4px;
+  border-radius: 100px;
+  background: var(--primary-accent, #532ee4);
+  width: 15%;
+}

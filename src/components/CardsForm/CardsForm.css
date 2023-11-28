@@ -1,0 +1,59 @@
+div.body-card {
+  border-radius: 16px;
+  padding: 48px;
+  box-shadow: 0px 0px 24px 0px rgba(76, 67, 114, 0.1);
+  position: relative;
+  margin-bottom: 24px;
+}
+
+div.body-card-light {
+  background: var(--ink-terface-10-white, #fff);
+}
+
+div.body-card-dark {
+  background: var(--ink-terface-10-white, #55577e);
+}
+
+div.body-card h5 {
+  font-family: Helvetica Neue;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 0;
+}
+
+div.body-card h4 {
+  font-family: Helvetica Neue;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+div.body-card-light h5 {
+  color: #8f90be;
+}
+
+div.body-card-dark h5 {
+  color: #e1e1ee;
+}
+
+div.body-card-light h4 {
+  color: #292a3d;
+}
+
+div.body-card-dark h4 {
+  color: #fff;
+  max-width: 300px;
+}
+
+div.body-card h6 {
+  color: #f45d6f;
+  font-family: Helvetica Neue;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 0;
+}
