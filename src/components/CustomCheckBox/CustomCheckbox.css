@@ -16,6 +16,10 @@ input[type="checkbox"]:checked {
   border: none;
 }
 
+input[type="checkbox"]:focus  {
+  outline: none !important;
+}
+
 input[type="checkbox"]::before {
   content: " ";
   margin-top: -2px;

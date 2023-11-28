@@ -1,8 +1,15 @@
 div.special-input-container {
   border-radius: 10px;
-  border: 1px solid #e1e1ee;
-  background: #fcfcfe;
+  border: 1px solid #e1e1ee;  
   display: flex;
+}
+
+div.special-input-container.dark {
+  background: #532EE4;
+}
+
+div.special-input-container.light {
+  background: #fcfcfe;
 }
 
 div.special-input-container span:first-child {
@@ -18,11 +25,43 @@ div.special-input-container span:nth-child(2) {
   padding: 0 12px;
   display: flex;
   justify-content: flex-start;
-  align-items: center;
-  color: #8f90be;
+  align-items: center;  
   font-family: Helvetica;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+}
+
+div.special-input-container span.light:nth-child(2) {
+  color: #8f90be;
+}
+
+div.special-input-container span.dark:nth-child(2) {
+  color: #fff;
+}
+
+.optional-container {
+  width: 100%;
+  display: flex;
+  padding-top: 12px;
+}
+
+.optional-container .special-input-textarea {
+  border-radius: 8px;
+  border: 1px solid var(--ink-terface-5-line, #e1e1ee);
+  background: var(--ink-terface-10-white, #fff);
+  height: 120px;
+  padding: 12px 24px;
+  width: 100%;
+  color: #532ee4;
+  font-family: Helvetica Neue;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.optional-container .special-input-textarea:focus-visible {
+  border: 1px solid #532ee4;
 }

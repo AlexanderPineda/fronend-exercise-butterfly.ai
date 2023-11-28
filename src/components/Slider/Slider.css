@@ -14,7 +14,25 @@ div.progress-wrapper {
   content: " ";
   top: 2px;
   left: 2px;
-  background-color: #f45d6f;
+  /* background-color: #f45d6f; */
+  background-image: linear-gradient(
+    to right,
+    #df0909,
+    #e53005,
+    #eb4702,
+    #f15901,
+    #f66a02,
+    #fa7b00,
+    #fd8b00,
+    #ff9a00,
+    #ff9a00,
+    #ffae00,
+    #ffc200,
+    #ffd600,
+    #02bf02,
+    #02bf02,
+    #02bf02
+  );
   border-radius: 100px;
   box-sizing: border-box;
 }

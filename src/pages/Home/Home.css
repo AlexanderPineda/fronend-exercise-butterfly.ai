@@ -156,7 +156,7 @@ footer button.btn-langs {
 }
 
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 850px) {
   main.form-content {
     width: 100%;
   }

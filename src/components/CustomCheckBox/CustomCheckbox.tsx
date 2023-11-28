@@ -1,8 +1,10 @@
 import "./CustomCheckbox.css"
 
-interface CustomCheckboxProps {} 
-const CustomCheckbox: React.FC<CustomCheckboxProps> = () => {
-    return <input type="checkbox" disabled={false} name="checkbox" />;
+interface CustomCheckboxProps {
+    setisChecked: React.Dispatch<React.SetStateAction<boolean>>
+} 
+const CustomCheckbox: React.FC<CustomCheckboxProps> = ({setisChecked}) => {
+    return <input type="checkbox" onChange={(e) => setisChecked(e.target?.checked)} disabled={false} name="checkbox" />;
 }
  
 export default CustomCheckbox;
