@@ -102,6 +102,10 @@ button.submit-btn {
   line-height: normal;
 }
 
+div.special-inputs {
+  margin-bottom: 24px;
+}
+
 footer {
   width: 100%;
 }

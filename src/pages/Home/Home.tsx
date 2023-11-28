@@ -4,6 +4,7 @@ import "./Home.css";
 import CardsForm from "../../components/CardsForm/CardsForm";
 import Slider from "../../components/Slider/Slider";
 import { useState } from "react";
+import SpecialInput from "../../components/SpecialInput/SpecialInput";
 
 const getDynamicData = (): Promise<{ [key: string]: string }[]> =>
   new Promise((resolve, reject) => {
@@ -75,7 +76,18 @@ function Home() {
               <>
                 <hr className="divider-coments" />
                 <h6>Which of the following should we improve on?</h6>
-                
+                <div className="special-inputs">
+                  <SpecialInput text="Quality of feedback" />
+                </div>
+                <div className="special-inputs">
+                  <SpecialInput text="Actionability of feedback" />
+                </div>
+                <div className="special-inputs">
+                  <SpecialInput text="Openness to receive peer feedback" />
+                </div>
+                <div className="special-inputs">
+                  <SpecialInput text="Other" />
+                </div>
               </>
             )}
           </CardsForm>

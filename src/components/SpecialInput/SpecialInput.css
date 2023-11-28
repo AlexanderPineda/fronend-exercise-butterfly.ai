@@ -1,0 +1,28 @@
+div.special-input-container {
+  border-radius: 10px;
+  border: 1px solid #e1e1ee;
+  background: #fcfcfe;
+  display: flex;
+}
+
+div.special-input-container span:first-child {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid #e1e1ee;
+}
+
+div.special-input-container span:nth-child(2) {
+  padding: 0 12px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: #8f90be;
+  font-family: Helvetica;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
