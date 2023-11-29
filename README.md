@@ -1,30 +1,58 @@
-# React + TypeScript + Vite
+# Front-End Exercise - Butterfly.ai 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+To run the project follow the next guidance.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Getting Started
 
-## Expanding the ESLint configuration
+Please follow the nexts steps to run the project:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+**1. Install the libraries** \
+**2. Run the service in the envitoment choosen _Develop_ and _production_**
 
-- Configure the top-level `parserOptions` property like this:
+<br />
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+### Install the libraries
+
+Please run the following command, to install all packages
+
+```bash
+npm install
+# or
+yarn add
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Run the service in the enviroment choosen _Develop_ and _production_
+
+Depending you enviroment follow the next steps:
+
+- For Development:
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+- For Production bundle:
+
+```bash
+npm run build
+# or
+yarn build
+```
+
+afterthat to run the service.
+
+```bash
+npm start
+# or
+yarn start
+```
+
+Thank for being here, I hope you like it.
+
+Sincerely, Alexander Leon, [LinkedIn Profile](https://www.linkedin.com/in/alexander-pineda-876bb01a8/)
+
+

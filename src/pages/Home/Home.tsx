@@ -17,7 +17,7 @@ export interface Survey {
   peerFeedback: string;
   otherFeedback: string;
 }
-export type SurveyKeys =  keyof Survey;
+export type SurveyKeys = keyof Survey;
 
 const getDynamicData = (): Promise<{ [key: string]: string }[]> =>
   new Promise((resolve, reject) => {
@@ -47,16 +47,21 @@ function Home() {
     formState: { errors },
     register,
     handleSubmit,
-    resetField
+    resetField,
   } = useForm<Survey>();
   const navigate = useNavigate();
 
   const submitSurvey: SubmitHandler<Survey> = (data) => {
-    if (typeof slider1Value !== "number" || typeof slider2Value !== "number" ) {
-      return showSwal()
+    if (typeof slider1Value !== "number" || typeof slider2Value !== "number") {
+      return showSwal();
     }
-    console.log(data);  //!? The form data is here  
-    navigate("/thanks")
+    const formData = {
+      ...data,
+      questionOneScore: slider1Value,
+      questionTwoScore: slider2Value,
+    }; //!? The form data is here
+    console.log(formData);
+    return navigate("/thanks");
   };
 
   return (
