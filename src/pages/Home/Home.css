@@ -37,9 +37,9 @@ div.texts-ratings > span {
 }
 
 hr.divider-coments {
-  background:#c5c6e1;
+  background: #c5c6e1;
   height: 1px;
-  border:none;
+  border: none;
   margin: 24px 0;
 }
 
@@ -155,9 +155,26 @@ footer button.btn-langs {
   height: 36px;
 }
 
+@media screen and (min-width: 850px) and (max-width: 1000px) {
+  main.form-content {
+    width: 90%;
+  }
+
+  button.submit-btn {
+    float: unset;
+    margin: auto;
+    display: block;
+  }
+}
 
 @media screen and (max-width: 850px) {
   main.form-content {
     width: 100%;
+  }
+
+  button.submit-btn {
+    float: unset;
+    margin: auto;
+    display: block;
   }
 }

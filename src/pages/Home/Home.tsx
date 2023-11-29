@@ -92,7 +92,7 @@ function Home() {
             )}
           </CardsForm>
           <CardsForm colorStyle="dark">
-            <div className="feedback-indicator">Extra feedback helps</div>
+            <div className="feedback-indicator pulse">Extra feedback helps</div>
             <h5>3 of 3 | Open ended</h5>
             <h4>Would you like to add anything?</h4>
             <textarea
@@ -103,7 +103,7 @@ function Home() {
         </section>
         <section>
           <button className="submit-btn">
-            Submit <img src="/right-arrow.svg" alt="" />
+            Submit <img className="wobble" src="/right-arrow.svg" alt="" />
           </button>
         </section>
       </main>
