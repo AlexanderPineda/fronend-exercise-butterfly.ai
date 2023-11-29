@@ -5,13 +5,13 @@ import "./Slider.css";
 
 interface SliderProps {
   index: number;
-  setSliderValueFromOutside?: React.Dispatch<
+  outterState?: React.Dispatch<
     React.SetStateAction<unknown | number>
   >;
 }
 const Slider: React.FC<SliderProps> = ({
   index,
-  setSliderValueFromOutside,
+  outterState,
 }) => {
   const [sliderValue, setsliderValue] = useState<number>(1);
   const [mobile, setMobile] = useState(window.innerWidth <= 500);
@@ -96,7 +96,7 @@ const Slider: React.FC<SliderProps> = ({
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-expect-error
           setsliderValue(e);
-          setSliderValueFromOutside && setSliderValueFromOutside(e);
+          outterState && outterState(e);
         }}
         classNames={{ handle: "grow" }}
         styles={{

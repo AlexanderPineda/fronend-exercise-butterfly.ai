@@ -28,6 +28,7 @@ function Home() {
     queryKey: ["data"],
     queryFn: () => getDynamicData(),
   });
+  const [slider1Value, setslider1Value] = useState<unknown | number>();
   const [slider2Value, setslider2Value] = useState<unknown | number>();
 
   return (
@@ -52,12 +53,17 @@ function Home() {
           <CardsForm colorStyle="light">
             <h5>1 of 3 | Rating slider</h5>
             <h4>I am satisfied with my roles and responsibilities.</h4>
-            <Slider index={0} />
+            <Slider index={0} outterState={setslider1Value} />
             <div className="texts-ratings">
               <span>Strongly disagree</span>
               <span>Neutral</span>
               <span>Strongly agree</span>
             </div>
+            {typeof slider1Value === "number" && slider1Value < 5 && (
+              <div className="additional-comments">
+                <input type="text" placeholder="Additional comments" />
+              </div>
+            )}
           </CardsForm>
           <CardsForm colorStyle="light">
             <h5>2 of 3 | Rating slider with multiple choice</h5>
@@ -65,14 +71,13 @@ function Home() {
               I feel comfortable working and interacting with the colleagues on
               my team.
             </h4>
-            <Slider index={1} setSliderValueFromOutside={setslider2Value} />
+            <Slider index={1} outterState={setslider2Value} />
             <div className="texts-ratings">
               <span>Strongly disagree</span>
               <span>Neutral</span>
               <span>Strongly agree</span>
             </div>
-
-            {typeof slider2Value === "number" && slider2Value <= 5 && (
+            {typeof slider2Value === "number" && slider2Value < 5 && (
               <>
                 <hr className="divider-coments" />
                 <h6>Which of the following should we improve on?</h6>

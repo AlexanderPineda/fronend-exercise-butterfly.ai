@@ -27,6 +27,12 @@ div.texts-ratings {
   margin-top: 24px;
 }
 
+div.additional-comments {
+  margin-top: 24px;
+  width: 100%;
+  display: flex;
+}
+
 div.texts-ratings > span {
   color: #8f90be;
   font-family: Helvetica Neue;
@@ -42,6 +48,7 @@ hr.divider-coments {
   border: none;
   margin: 24px 0;
 }
+
 
 textarea.comments {
   border-radius: 8px;

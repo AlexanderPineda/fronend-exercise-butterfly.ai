@@ -38,6 +38,20 @@ h4 {
   font-weight: 700;
   line-height: normal;
 }
+input[type="text"] {
+  border-radius: 8px;
+  border: 1px solid var(--ink-terface-5-line, #e1e1ee);
+  background: var(--ink-terface-10-white, #fff);
+  min-height: 56px;
+  width: 100%;
+  color: #532ee4;
+  font-family: Helvetica Neue;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 0 24px;
+}
 button {
   border-radius: 8px;
   border: 1px solid transparent;
