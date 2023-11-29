@@ -8,11 +8,16 @@ import Home from "./pages/Home/Home.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./styles/index.css";
 import "./styles/animations.css";
+import ThankYou from "./pages/ThankYou/ThankYouPage.tsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+  },
+  {
+    path: "/thanks",
+    element: <ThankYou />,
   },
 ]);
 

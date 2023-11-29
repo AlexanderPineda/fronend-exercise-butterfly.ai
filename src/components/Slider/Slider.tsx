@@ -14,16 +14,37 @@ const Slider: React.FC<SliderProps> = ({
   setSliderValueFromOutside,
 }) => {
   const [sliderValue, setsliderValue] = useState<number>(1);
+  const [mobile, setMobile] = useState(window.innerWidth <= 500);
+  const handleWindowSizeChange = () => {
+    setMobile(window.innerWidth <= 500);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowSizeChange);
+    return () => {
+      window.removeEventListener("resize", handleWindowSizeChange);
+    };
+  }, []);
 
   useEffect(() => {
     const dots = Array.from(document.querySelectorAll(".rc-slider-dot"));
-    dots &&
+    if (!dots) {
+      return;
+    }
+    if (!mobile) {
       dots.map((_, ind) => {
         dots[ind].innerHTML = `<img src="/slider/${
           ind % 10 === 0 ? "white-stars" : "grey-stars"
         }/star-${(ind % 10) + 1}.svg" alt="stars-rate-slider" />`;
       });
-  }, []);
+      return;
+    }
+    dots.map((_, ind) => {
+      dots[ind].innerHTML = `<img src="/slider/${
+        ind % 5 === 0 ? "white-stars" : "grey-stars"
+      }/star-${(ind % 5) + 1}.svg" alt="stars-rate-slider" />`;
+    });
+  }, [mobile]);
 
   useEffect(() => {
     const handler = Array.from(document.querySelectorAll(".rc-slider-handle"));
@@ -31,12 +52,11 @@ const Slider: React.FC<SliderProps> = ({
       (handler[
         index
       ].innerHTML = `<img src="/slider/white-stars/star-${sliderValue}.svg" />`);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [sliderValue]);
+  }, [index, sliderValue]);
 
   useEffect(() => {
     const dots = Array.from(document.querySelectorAll(".rc-slider-dot"));
-    if (index === 0) {
+    if (index === 0 && !mobile) {
       dots.map((_, i) => {
         i < 9 &&
           (dots[i].innerHTML = `<img src="/slider/${
@@ -45,7 +65,7 @@ const Slider: React.FC<SliderProps> = ({
       });
       return;
     }
-    if (index === 1) {
+    if (index === 1 && !mobile) {
       dots.map((_, i) => {
         i > 9 &&
           i < 19 &&
@@ -56,21 +76,25 @@ const Slider: React.FC<SliderProps> = ({
       return;
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [sliderValue]);
+  }, [sliderValue, mobile]);
+
+  const sliderMarks = mobile
+    ? { 1: 1, 2: 2, 3: 3, 4: 4, 5: 5 }
+    : { 1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10 };
 
   return (
     <div className="wrapper-slider">
       <div
         className="progress-wrapper"
         style={{
-          width: `calc(${10 * sliderValue}% - 4px)`,
+          width: `calc(${(mobile ? 20 : 10) * sliderValue}% - 4px)`,
           height: "calc(100% - 4px)",
         }}
       ></div>
       <SliderRc
-        marks={{ 1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10 }}
+        marks={sliderMarks}
         min={1}
-        max={10}
+        max={mobile ? 5 : 10}
         defaultValue={1}
         onChange={(e) => {
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment

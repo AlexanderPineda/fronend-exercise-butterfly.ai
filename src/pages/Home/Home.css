@@ -159,7 +159,6 @@ footer button.btn-langs {
   main.form-content {
     width: 90%;
   }
-
   button.submit-btn {
     float: unset;
     margin: auto;
@@ -171,10 +170,15 @@ footer button.btn-langs {
   main.form-content {
     width: 100%;
   }
-
   button.submit-btn {
     float: unset;
     margin: auto;
     display: block;
+  }
+  .feedback-indicator {
+    top: 20px;
+    right: 15px;
+    width: 70px;
+    height: 70px;
   }
 }
