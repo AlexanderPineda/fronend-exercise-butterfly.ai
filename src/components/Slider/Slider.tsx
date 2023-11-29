@@ -31,18 +31,10 @@ const Slider: React.FC<SliderProps> = ({
     if (!dots) {
       return;
     }
-    if (!mobile) {
-      dots.map((_, ind) => {
-        dots[ind].innerHTML = `<img src="/slider/${
-          ind % 10 === 0 ? "white-stars" : "grey-stars"
-        }/star-${(ind % 10) + 1}.svg" alt="stars-rate-slider" />`;
-      });
-      return;
-    }
     dots.map((_, ind) => {
       dots[ind].innerHTML = `<img src="/slider/${
-        ind % 5 === 0 ? "white-stars" : "grey-stars"
-      }/star-${(ind % 5) + 1}.svg" alt="stars-rate-slider" />`;
+        ind % (mobile ? 5 : 10) === 0 ? "white-stars" : "grey-stars"
+      }/star-${(ind % (mobile ? 5 : 10)) + 1}.svg" alt="stars-rate-slider" />`;
     });
   }, [mobile]);
 
@@ -56,22 +48,26 @@ const Slider: React.FC<SliderProps> = ({
 
   useEffect(() => {
     const dots = Array.from(document.querySelectorAll(".rc-slider-dot"));
-    if (index === 0 && !mobile) {
+    if (index === 0) {
       dots.map((_, i) => {
-        i < 9 &&
+        i < (mobile ? 4 : 9) &&
           (dots[i].innerHTML = `<img src="/slider/${
             i < sliderValue ? "white-stars" : "grey-stars"
           }/star-${i + 1}.svg" alt="stars-rate-slider" />`);
       });
       return;
     }
-    if (index === 1 && !mobile) {
+    if (index === 1) {
       dots.map((_, i) => {
-        i > 9 &&
-          i < 19 &&
+        i > (mobile ? 4 : 9) &&
+          i < (mobile ? 9 : 19) &&
           (dots[i].innerHTML = `<img src="/slider/${
-            index + (i % 10) < sliderValue ? "white-stars" : "grey-stars"
-          }/star-${(i % 10) + 1}.svg" alt="stars-rate-slider" />`);
+            index + (i % (mobile ? 5 : 10)) < sliderValue
+              ? "white-stars"
+              : "grey-stars"
+          }/star-${
+            (i % (mobile ? 5 : 10)) + 1
+          }.svg" alt="stars-rate-slider" />`);
       });
       return;
     }
