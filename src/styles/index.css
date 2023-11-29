@@ -51,6 +51,14 @@ input[type="text"] {
   font-weight: 400;
   line-height: normal;
   padding: 0 24px;
+  display: block;
+  box-sizing: border-box;
+}
+small.error-message-form{
+  color: red;
+  width: 100%;
+  display: block;
+  margin-top: 5px;
 }
 button {
   border-radius: 8px;

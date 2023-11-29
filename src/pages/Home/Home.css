@@ -30,7 +30,7 @@ div.texts-ratings {
 div.additional-comments {
   margin-top: 24px;
   width: 100%;
-  display: flex;
+  box-sizing: border-box;
 }
 
 div.texts-ratings > span {

@@ -1,9 +1,18 @@
-import "./ThankYouPage.css"
+import "./ThankYouPage.css";
 
 interface ThankYouPageProps {}
 const ThankYouPage: React.FC<ThankYouPageProps> = () => {
   return (
-    <div style={{display: "flex", justifyContent: "center", alignItems: "center", height: "100vh", boxSizing: "border-box", overflow: "hidden"}}>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+        boxSizing: "border-box",
+        overflow: "hidden",
+      }}
+    >
       <div>
         <div className="pyro">
           <div className="before"></div>
@@ -20,11 +29,21 @@ const ThankYouPage: React.FC<ThankYouPageProps> = () => {
             us. See you soon.
           </p>
         </div>
-
-        <footer className="site-footer">
-          <p className="site-footer__fingeprint">
-            Copyright ©{new Date().getFullYear()} | All Rights Reserved
-          </p>
+        <br />
+        <br />
+        <footer>
+          <div>
+            <div>
+              <p>
+                What is this?{" "}
+                <a target="_blank" href="https://www.butterfly.ai/">
+                  Meet Butterfly.ai
+                </a>
+              </p>
+              <a>Terms of Service | Privacy Policy</a>
+              <p>©2016-2023 Appynest, Inc.</p>
+            </div>
+          </div>
         </footer>
       </div>
     </div>
