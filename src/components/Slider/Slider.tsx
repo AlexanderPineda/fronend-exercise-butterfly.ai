@@ -24,7 +24,7 @@ const Slider: React.FC<SliderProps> = ({
     return () => {
       window.removeEventListener("resize", handleWindowSizeChange);
     };
-  }, []);
+  }, [mobile]);
 
   useEffect(() => {
     const dots = Array.from(document.querySelectorAll(".rc-slider-dot"));
